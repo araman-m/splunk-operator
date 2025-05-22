@@ -968,7 +968,7 @@ func TestApplyNamespaceScopedSecretObject(t *testing.T) {
 		},
 		Data: map[string][]byte{
 			"password":     password,
-			"pass4Symmkey": pass4,
+			"pass4SymmKey": pass4,
 		},
 	}
 	spltest.ReconcileTester(t, "TestApplyNamespaceScopedSecretObject", "test", "test", createCalls, updateCalls, reconcile, false, &secret)
