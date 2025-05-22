@@ -974,7 +974,7 @@ func TestApplyNamespaceScopedSecretObject(t *testing.T) {
 	spltest.ReconcileTester(t, "TestApplyNamespaceScopedSecretObject", "test", "test", createCalls, updateCalls, reconcile, false, &secret)
 
 	// Fully baked splunk-secrets object
-	createCalls = map[string][]spltest.MockFuncCall{"Get": funcCalls}
+	createCalls = map[string][]spltest.MockFuncCall{"Get": funcCalls, "Update": funcCalls}
 	updateCalls = map[string][]spltest.MockFuncCall{"Get": funcCalls}
 	password, err = splcommon.GenerateSecretWithComplexity(24, 1, 1, 1, 1)
 	if err != nil {
